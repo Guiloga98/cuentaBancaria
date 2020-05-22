@@ -49,7 +49,7 @@ public class Cliente {
      * Metodo para retirar dinero
      *
      * @param cantidad 
-     * cantidad retira dinero de la cuenta, comprueba que el saldo sea >0
+     * cantidad retira dinero de la cuenta, comprueba que el saldo sea mayor que 0
      */
     public void retirarSaldo(double cantidad) {
         if (cantidad <= saldo) {
@@ -141,6 +141,7 @@ public class Cliente {
      * setter direccion modifica direccion
      *
      * @param direccion
+     * direccion del cliente
      */
     public void setDireccion(String direccion) {
         this.direccion = direccion;
@@ -226,7 +227,7 @@ public class Cliente {
     /**
      * Metodo toString muestra informacion
      *
-     * @return
+     * @return Informacion
      */
     @Override
     public String toString() {

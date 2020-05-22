@@ -30,6 +30,7 @@ public class Gestor implements ClaseIntermediaMetodos {
      * Modifica el apellido del cliente
      *
      * @param c
+     * cliente al que se va a modificar
      */
     @Override
     public void modificarApellido(Cliente c) {
