@@ -23,10 +23,6 @@ public class BancaEntornos {
         cuentasClientes.add(new Cliente("Pepe", "Gutierrez", "Fuenlabrada", "987654321Q", 212121212, 40, 3100, 26));
         cuentasClientes.add(new Cliente("Rosa", "Galan", "Mostoles", "56781234Z", 301297513, 30, 1000, 25));
         cuentasClientes.add(new Cliente("Carla", "Saelices", "Leganes", "02851321K", 1987690, 18, 100, 50));
-        
-        
-
-        
 
         try {
             int opcion;
@@ -61,7 +57,7 @@ public class BancaEntornos {
                                         while (opcion3 != 6) {
                                             switch (opcion3) {
                                                 case 1:
-                                                        modificarNombre();
+                                                    modificarNombre();
                                                     break;
                                                 case 2:
                                                     modificarApellido();
@@ -115,6 +111,11 @@ public class BancaEntornos {
         }
     }
 
+    /**
+     * Metodo del menu principal
+     *
+     * @return la opcion que ha elegido el usuario
+     */
     public static int menu() {
         System.out.println("+---------------------------------------------+");
         System.out.println("| Bienvenido a la aplicacion del banco        |");
@@ -128,6 +129,11 @@ public class BancaEntornos {
         return (sc.nextInt());
     }
 
+    /**
+     * Metodo del segundo menu
+     *
+     * @return la opcion que ha elegido el usuario
+     */
     public static int menu2() {
         System.out.println("+-------------------------------------------+");
         System.out.println("| Has seleccionado entrar en su cuenta       |");
@@ -140,6 +146,11 @@ public class BancaEntornos {
         return numerocuenta;
     }
 
+    /**
+     * Metodo del tercer menu
+     *
+     * @return la opcion que ha elegido el usuario
+     */
     public static int menu3() {
         System.out.println("+-------------------------------------------+");
         System.out.println("| Bienvenido a su cuenta                     |");
@@ -155,38 +166,43 @@ public class BancaEntornos {
         return (sc.nextInt());
     }
 
+    /**
+     * Comprueba que la cuenta existe
+     *
+     * @param num
+     */
     public static void dentroCuentaCliente(int num) {
         //boolean encontrado = false;
-        boolean salida=false;
+        boolean salida = false;
         int contador = 0;
-        while(!salida){
-        for (int i = 0; i < cuentasClientes.size() /*&& !encontrado*/; i++) {
-            if (num == cuentasClientes.get(i).getNumeroCuenta()) {
-                
-                //encontrado = true;
-                contador++;
-            } 
+        while (!salida) {
+            for (int i = 0; i < cuentasClientes.size() /*&& !encontrado*/; i++) {
+                if (num == cuentasClientes.get(i).getNumeroCuenta()) {
 
-        }
-        if (contador==1) {
-            System.out.println("+-------------------+");
-            System.out.println("| CUENTA ENCONTRADA |");
-            System.out.println("+-------------------+");
-            salida=true;
-        } else{
-            System.out.println("+--------------------------------+------+");
-            System.out.println("| ERROR, ese numero de cuenta no existe |");
-            System.out.println("| Por favor introduzca uno nuevo        |");
-            System.out.println("+---------------------------------------+");
-            System.out.print("\t->: ");
-            num=sc.nextInt();
-        }
+                    //encontrado = true;
+                    contador++;
+                }
+
+            }
+            if (contador == 1) {
+                System.out.println("+-------------------+");
+                System.out.println("| CUENTA ENCONTRADA |");
+                System.out.println("+-------------------+");
+                salida = true;
+            } else {
+                System.out.println("+--------------------------------+------+");
+                System.out.println("| ERROR, ese numero de cuenta no existe |");
+                System.out.println("| Por favor introduzca uno nuevo        |");
+                System.out.println("+---------------------------------------+");
+                System.out.print("\t->: ");
+                num = sc.nextInt();
+            }
         }
     }
-    
-  
-    
 
+    /**
+     * Metodo para mostrar todas las cuentas
+     */
     public static void mostrarCuentas() {
         System.out.println("+-----------------------------+");
         System.out.println("| MOSTRANDO TODAS LAS CUENTAS |");
@@ -196,6 +212,9 @@ public class BancaEntornos {
         }
     }
 
+    /**
+     * Metodo para crear una nueva cuenta
+     */
     public static void crearCuenta() {
         System.out.println("+------------------------------------+");
         System.out.println("| Has elegido crear una nueva cuenta |");
@@ -224,12 +243,17 @@ public class BancaEntornos {
         int tlf = sc.nextInt();
         cuentasClientes.add(new Cliente(nombre, apellido, direccion, nif, edad, tlf, 0, generarNumCuenta()));
         System.out.println("+----------------------------------------------------------------------------+");
-        System.out.println("| Su cuenta se ha creado correctamente señor/a " + nombre + " " + apellido+" |");
+        System.out.println("| Su cuenta se ha creado correctamente señor/a " + nombre + " " + apellido + " |");
         System.out.println("| Le recordamos que su cuenta actualmente dispone de un saldo de 0€          |");
         System.out.println("+----------------------------------------------------------------------------+");
 
     }
 
+    /**
+     * Metodo que genera un numero aleatorio para el numero de la cuenta
+     *
+     * @return n
+     */
     public static int generarNumCuenta() {
         int n = rnd.nextInt(75 - 25 + 1) + 25;
         for (int i = 0; i < cuentasClientes.size(); i++) {
@@ -244,6 +268,9 @@ public class BancaEntornos {
         return n;
     }
 
+    /**
+     * Metodo que llama al metodo ingresarSaldo del cliente
+     */
     public static void ingresar() {
         boolean ingresar = false;
         System.out.println("+-----------------------------------+");
@@ -262,6 +289,9 @@ public class BancaEntornos {
 
     }
 
+    /**
+     * Metodo que llama al metodo retirarSaldo del cliente
+     */
     public static void retirar() {
         boolean retirar = false;
         System.out.println("+-----------------------------------+");
@@ -279,6 +309,9 @@ public class BancaEntornos {
         }
     }
 
+    /**
+     * Metodo que llama al metodo consultarSaldo del cliente
+     */
     public static void consultar() {
         System.out.println("+--------------------------------+");
         System.out.println("| Ha dedicido consultar tu saldo |");
@@ -293,6 +326,11 @@ public class BancaEntornos {
         }
     }
 
+    /**
+     * Menu de atencion al cliente
+     *
+     * @return la opcion que eliga el cliente
+     */
     public static int menuAtencionCliente() {
         System.out.println("+------------------------------------------------+");
         System.out.println("| Has pulsado sobre atencional cliente           |");
@@ -308,51 +346,65 @@ public class BancaEntornos {
         System.out.print("\t->: ");
         return (sc.nextInt());
     }
-    
-    public static void modificarNombre(){
+
+    /**
+     * Llama al metodo del gestor para modificar el nombre
+     */
+    public static void modificarNombre() {
         for (int i = 0; i < cuentasClientes.size(); i++) {
             if (cuentasClientes.get(i).getNumeroCuenta() == numerocuenta) {
                 Paco.modificarNombre(cuentasClientes.get(i));
             }
         }
-       
+
     }
-    
-    public static void modificarApellido(){
+
+    /**
+     * Llama al metodo del gestor para modificar el apellido
+     */
+    public static void modificarApellido() {
         for (int i = 0; i < cuentasClientes.size(); i++) {
             if (cuentasClientes.get(i).getNumeroCuenta() == numerocuenta) {
                 Paco.modificarApellido(cuentasClientes.get(i));
             }
         }
-       
+
     }
-    
-    public static void modificarEdad(){
+
+    /**
+     * Llama al metodo del gestor para modificar la edad
+     */
+    public static void modificarEdad() {
         for (int i = 0; i < cuentasClientes.size(); i++) {
             if (cuentasClientes.get(i).getNumeroCuenta() == numerocuenta) {
                 Paco.modificarEdad(cuentasClientes.get(i));
             }
         }
-       
+
     }
-    
-    
-    public static void modificarDireccion(){
+
+    /**
+     * Llama al metodo del gestor para modificar la direccion
+     */
+    public static void modificarDireccion() {
         for (int i = 0; i < cuentasClientes.size(); i++) {
             if (cuentasClientes.get(i).getNumeroCuenta() == numerocuenta) {
                 Paco.modificarDireccion(cuentasClientes.get(i));
             }
         }
-       
+
     }
-    
-    public static void modificarTelefono(){
+
+    /**
+     * Llama al metodo del gestor para modificar el telefono
+     */
+    public static void modificarTelefono() {
         for (int i = 0; i < cuentasClientes.size(); i++) {
             if (cuentasClientes.get(i).getNumeroCuenta() == numerocuenta) {
                 Paco.modificarTelefono(cuentasClientes.get(i));
             }
         }
-       
+
     }
 
 }
