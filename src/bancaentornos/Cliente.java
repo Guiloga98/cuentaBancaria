@@ -36,7 +36,8 @@ public class Cliente {
     /**
      * Metodo para ingresar dinero
      *
-     * @param cantidad Ingresa dinero en la cuenta
+     * @param cantidad 
+     * Ingresa dinero en la cuenta
      */
     public void ingresarSaldo(double cantidad) {
         this.saldo += cantidad;
@@ -47,7 +48,8 @@ public class Cliente {
     /**
      * Metodo para retirar dinero
      *
-     * @param cantidad retira dinero de la cuenta, comprueba que el saldo sea >0
+     * @param cantidad 
+     * cantidad retira dinero de la cuenta, comprueba que el saldo sea >0
      */
     public void retirarSaldo(double cantidad) {
         if (cantidad <= saldo) {
@@ -72,6 +74,7 @@ public class Cliente {
      * Gettter numeroCuenta
      *
      * @return numeroCuenta
+     * 
      */
     public int getNumeroCuenta() {
         return numeroCuenta;
@@ -81,6 +84,7 @@ public class Cliente {
      * setter numerCuenta Para modificar el atributo
      *
      * @param numeroCuenta
+     * numero de cuenta del cliente
      */
     public void setNumeroCuenta(int numeroCuenta) {
         this.numeroCuenta = numeroCuenta;
@@ -99,6 +103,7 @@ public class Cliente {
      * setter nombre Modifica el nombre
      *
      * @param nombre
+     * nombre del cliente
      */
     public void setNombre(String nombre) {
         this.nombre = nombre;
@@ -117,6 +122,7 @@ public class Cliente {
      * setter apellido modificar apellido
      *
      * @param apellido
+     * apellido del cliente
      */
     public void setApellido(String apellido) {
         this.apellido = apellido;
@@ -153,6 +159,7 @@ public class Cliente {
      * setter nif modifica el nif
      *
      * @param nif
+     * nif del cliente
      */
     public void setNif(String nif) {
         this.nif = nif;
@@ -171,6 +178,7 @@ public class Cliente {
      * setter telefono modifica el telefono
      *
      * @param telefono
+     * telefono del cliente
      */
     public void setTelefono(int telefono) {
         this.telefono = telefono;
@@ -189,6 +197,7 @@ public class Cliente {
      * setter edad modifica la edad
      *
      * @param edad
+     * edad del cliente
      */
     public void setEdad(int edad) {
         this.edad = edad;
@@ -207,6 +216,7 @@ public class Cliente {
      * setter saldo modifica el saldo
      *
      * @param saldo
+     * saldo del cliente
      */
     public void setSaldo(int saldo) {
         this.saldo = saldo;

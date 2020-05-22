@@ -16,6 +16,7 @@ public class Gestor implements ClaseIntermediaMetodos {
      * Modifica el nombre del cliente
      *
      * @param c
+     * Cliente al que se va a modificar
      */
     @Override
     public void modificarNombre(Cliente c) {
@@ -43,6 +44,7 @@ public class Gestor implements ClaseIntermediaMetodos {
      * Modifica la direccion del cliente
      *
      * @param c
+     * Cliente al que se va a modificar
      */
     @Override
     public void modificarDireccion(Cliente c) {
@@ -57,6 +59,7 @@ public class Gestor implements ClaseIntermediaMetodos {
      * Modifica la edad del cliente
      *
      * @param c
+     * Cliente al que se va a modificar
      */
     @Override
     public void modificarEdad(Cliente c) {
@@ -71,6 +74,7 @@ public class Gestor implements ClaseIntermediaMetodos {
      * Modifica el telefono del cliente
      *
      * @param c
+     * Cliente al que se va a modificar
      */
     @Override
     public void modificarTelefono(Cliente c) {
